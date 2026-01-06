@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+python-multipart
+sqlmodel
+fastapi-mail
+slowapi
+pydantic-settings
+httpx
+python-dotenv
+aiosqlite
