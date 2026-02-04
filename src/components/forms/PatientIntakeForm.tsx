@@ -178,7 +178,8 @@ const PatientIntakeForm = () => {
         formData.append("files", file);
       });
 
-      const response = await fetch("/api/intake", {
+      const apiUrl = import.meta.env.VITE_API_URL || "";
+      const response = await fetch(`${apiUrl}/api/intake`, {
         method: "POST",
         body: formData,
       });
