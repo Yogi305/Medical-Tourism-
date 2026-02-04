@@ -6,10 +6,16 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlmodel import select
 from sqlmodel.ext.asyncio.session import AsyncSession
 from contextlib import asynccontextmanager
-from database import init_db, get_session
-from models import PatientIntake, PatientIntakeBase
 import shutil
 import json
+import sys
+
+# Add current directory to sys.path to fix imports when running from root
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+# Now we can import local modules
+from database import init_db, get_session
+from models import PatientIntake, PatientIntakeBase
 
 # Setup upload directory
 UPLOAD_DIR = "uploads"
